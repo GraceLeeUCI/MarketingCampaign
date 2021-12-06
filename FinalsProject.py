@@ -2,8 +2,6 @@ import numpy as np
 import pandas as pd
 import altair as alt
 import streamlit as st
-import seaborn as sns
-import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
@@ -170,29 +168,7 @@ st.header("EDA - Exploratory Data Analysis")
 
 '''
 Now onto Data Analysis! 
-With the remaining and cleaned up data that we got, we can create a correlation plot that will allow us 
-see which columns possibly have a good correlation with each other. 
-
-This plots from a scale of -1 to 1, where 1 has the best correlation, and -1 has the worst. 
-However, a correlation of 1 is not great here, because obviously a column is going to be a 100% correlation 
-with itself.
 '''
-#Correlation plot
-fig, ax = plt.subplots()
-sns.heatmap(df_clean.corr(),
-            cmap="PuRd",
-            vmax=1,
-            vmin=-1,
-            annot=True,
-            linewidths=.5,
-            robust=True)
-st.write(fig)
-
-'''
-This heatmap will not be really utilized though, it is rather for more of a visual and taking a grasp of 
-what data we are going to be dealing with, and how it might correlate! 
-'''
-
 st.write("##")
 
 
